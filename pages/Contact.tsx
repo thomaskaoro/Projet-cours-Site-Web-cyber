@@ -17,9 +17,9 @@ const Contact: React.FC = () => {
           <div className="grid lg:grid-cols-2 gap-24 mb-32">
             <div>
               <SectionHeader 
-                tag="Canal Exécutif"
-                title={language === 'fr' ? "Engagez une collaboration confidentielle." : "Engage in a confidential collaboration."}
-                subtitle={language === 'fr' ? "Chaque échange est traité avec le plus haut niveau de discrétion. Pour toute demande urgente ou prise de contact directe au niveau décisionnel." : "Each exchange is handled with the highest level of discretion. For urgent requests or direct decision-level contact."}
+                tag={t('contact.tag')}
+                title={t('contact.title')}
+                subtitle={t('contact.subtitle')}
               />
               
               <div className="space-y-12 mt-16">
@@ -55,7 +55,7 @@ const Contact: React.FC = () => {
                 <div className="flex items-start space-x-4">
                   <Clock size={20} className="text-gold mt-1" />
                   <div>
-                    <h4 className="text-[10px] uppercase tracking-widest text-slate-500 mb-1">Disponibilité</h4>
+                    <h4 className="text-[10px] uppercase tracking-widest text-slate-500 mb-1">{t('contact.availability')}</h4>
                     <p className="text-slate-300 text-sm">Lundi - Vendredi<br />08:30 - 19:30</p>
                   </div>
                 </div>
@@ -63,38 +63,36 @@ const Contact: React.FC = () => {
                 <div className="pt-12 border-t border-white/10">
                    <div className="flex items-center space-x-3 text-gold mb-4">
                       <ShieldCheck size={20} />
-                      <span className="text-xs uppercase tracking-[0.2em] font-bold">{language === 'fr' ? 'Engagement de confidentialité' : 'Confidentiality Engagement'}</span>
+                      <span className="text-xs uppercase tracking-[0.2em] font-bold">{t('contact.confTitle')}</span>
                    </div>
                    <p className="text-slate-500 text-xs leading-relaxed font-light">
-                      {language === 'fr' 
-                        ? "MLT Security Consulting s'engage à respecter la plus stricte confidentialité dès le premier contact. Aucune donnée n'est partagée avec des tiers sans accord explicite écrit."
-                        : "MLT Security Consulting commits to the strictest confidentiality from the first contact. No data is shared with third parties without explicit written consent."}
+                      {t('contact.confDesc')}
                    </p>
                 </div>
               </div>
             </div>
 
             <div className="bg-carbon p-12 lg:p-16 border border-white/5 shadow-2xl">
-              <h3 className="text-2xl font-serif text-white mb-10">{language === 'fr' ? 'Formulaire de Contact Stratégique' : 'Strategic Contact Form'}</h3>
+              <h3 className="text-2xl font-serif text-white mb-10">{t('contact.formTitle')}</h3>
               <form className="space-y-8">
                 <div className="grid md:grid-cols-2 gap-8">
                    <div className="space-y-2">
-                      <label className="text-[10px] uppercase tracking-widest text-slate-400">Nom Complet</label>
+                      <label className="text-[10px] uppercase tracking-widest text-slate-400">{t('contact.formName')}</label>
                       <input type="text" className="w-full bg-night/50 border-b border-white/10 py-4 text-white focus:outline-none focus:border-gold transition-colors font-light" />
                    </div>
                    <div className="space-y-2">
-                      <label className="text-[10px] uppercase tracking-widest text-slate-400">Organisation</label>
+                      <label className="text-[10px] uppercase tracking-widest text-slate-400">{t('contact.formOrg')}</label>
                       <input type="text" className="w-full bg-night/50 border-b border-white/10 py-4 text-white focus:outline-none focus:border-gold transition-colors font-light" />
                    </div>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-slate-400">Email Professionnel</label>
+                  <label className="text-[10px] uppercase tracking-widest text-slate-400">{t('contact.formEmail')}</label>
                   <input type="email" className="w-full bg-night/50 border-b border-white/10 py-4 text-white focus:outline-none focus:border-gold transition-colors font-light" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-slate-400">Sujet de l'échange</label>
+                  <label className="text-[10px] uppercase tracking-widest text-slate-400">{t('contact.formSubject')}</label>
                   <select className="w-full bg-night/50 border-b border-white/10 py-4 text-white focus:outline-none focus:border-gold transition-colors font-light appearance-none">
-                     <option>Sélectionnez une option</option>
+                     <option>{language === 'fr' ? 'Sélectionnez une option' : 'Select an option'}</option>
                      <option>Gouvernance & COMEX Advisory</option>
                      <option>Accompagnement vCISO</option>
                      <option>Audit M&A / Due Diligence</option>
@@ -103,31 +101,30 @@ const Contact: React.FC = () => {
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-slate-400">Message</label>
+                  <label className="text-[10px] uppercase tracking-widest text-slate-400">{t('contact.formMessage')}</label>
                   <textarea rows={4} className="w-full bg-night/50 border-b border-white/10 py-4 text-white focus:outline-none focus:border-gold transition-colors font-light resize-none"></textarea>
                 </div>
                 <div className="pt-6">
                   <button className="w-full bg-gold text-night py-5 uppercase text-[11px] tracking-[0.3em] font-bold hover:bg-white transition-all duration-300">
-                    {language === 'fr' ? 'Transmettre ma demande' : 'Submit Request'}
+                    {t('contact.formSubmit')}
                   </button>
                 </div>
               </form>
             </div>
           </div>
 
-          {/* Assessment Section CTA */}
           <div id="assessment" className="scroll-mt-32">
             {!showAssessment ? (
               <div className="bg-white/5 border border-gold/20 p-12 text-center max-w-4xl mx-auto">
-                 <h2 className="text-3xl font-serif text-white mb-6">Besoin d'une estimation stratégique immédiate ?</h2>
+                 <h2 className="text-3xl font-serif text-white mb-6">{t('contact.assessmentTitle')}</h2>
                  <p className="text-slate-400 font-light mb-10">
-                   Utilisez notre outil d'évaluation assisté par IA pour obtenir une première vision de votre feuille de route cyber.
+                   {t('contact.assessmentSub')}
                  </p>
                  <button 
                   onClick={() => setShowAssessment(true)}
                   className="inline-flex items-center space-x-4 border border-gold px-12 py-5 text-gold uppercase text-[11px] tracking-widest font-bold hover:bg-gold hover:text-night transition-all"
                  >
-                    <span>Lancer l'Évaluation</span>
+                    <span>{t('contact.assessmentBtn')}</span>
                     <ArrowRight size={16} />
                  </button>
               </div>

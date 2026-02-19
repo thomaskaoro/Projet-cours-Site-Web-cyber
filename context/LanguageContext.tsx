@@ -18,7 +18,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     const keys = key.split('.');
     let result: any = TRANSLATIONS[language];
     for (const k of keys) {
-      if (result[k]) result = result[k];
+      if (result && result[k]) result = result[k];
       else return key;
     }
     return result;
@@ -67,6 +67,52 @@ const TRANSLATIONS: Record<Language, any> = {
       ctaBtn: 'Prendre contact',
       trusted: 'Ils nous font confiance'
     },
+    about: {
+      tag: 'Le Cabinet',
+      title: 'Indépendance. Autorité. Discrétion.',
+      subtitle: "MLT Security Consulting est un cabinet de conseil stratégique né d'une conviction : la cybersécurité est le premier pilier de la confiance numérique moderne et un enjeu majeur de gouvernance.",
+      visionTitle: 'Vision Exécutive',
+      visionDesc: "Nous refusons l'approche purement technique. Pour MLT, la cybersécurité est un levier de performance qui doit être piloté au niveau du COMEX.",
+      philosophyTitle: 'Philosophie de Résilience',
+      philosophyDesc: "Un accompagnement fondé sur une compréhension profonde des enjeux business pour transformer la contrainte en socle de continuité.",
+      indepTitle: 'Indépendance Totale',
+      indepDesc: "Aucun lien avec des éditeurs. Notre objectivité est absolue, garantissant des recommandations alignées sur vos intérêts stratégiques.",
+      historyTag: 'Notre Histoire',
+      historyTitle: 'Une expertise forgée au sein d’environnements critiques.',
+      historySub: "MLT est né de plus de dix années d'intervention au sein d'organisations exposées à des menaces étatiques et des exigences réglementaires extrêmes.",
+      founderQuote: "La cybersécurité n'est plus une option technique. C'est l'armure invisible de votre stratégie de croissance.",
+      bridgeTitle: "Combler l'écart entre la technique et la stratégie."
+    },
+    insights: {
+      tag: 'Insights & Publications',
+      title: 'Analyses prospectives pour décideurs.',
+      subtitle: 'Retrouvez nos notes de synthèse et publications stratégiques pour décrypter les enjeux cyber de demain.',
+      download: 'Télécharger la note stratégique',
+      newsletterTitle: 'Newsletter Confidentielle',
+      newsletterSub: 'Recevez trimestriellement notre analyse macro des risques cyber directement dans votre boîte mail.',
+      subscribe: "S'abonner"
+    },
+    contact: {
+      tag: 'Canal Exécutif',
+      title: 'Engagez une collaboration confidentielle.',
+      subtitle: 'Chaque échange est traité avec le plus haut niveau de discrétion. Pour toute demande urgente ou prise de contact directe au niveau décisionnel.',
+      offices: 'Nos implantations stratégiques',
+      officeParis: 'Siège Paris',
+      officeMarseille: 'Bureau Méditerranée',
+      formTitle: 'Formulaire de Contact Stratégique',
+      formName: 'Nom Complet',
+      formOrg: 'Organisation',
+      formEmail: 'Email Professionnel',
+      formSubject: 'Sujet de l\'échange',
+      formMessage: 'Message',
+      formSubmit: 'Transmettre ma demande',
+      availability: 'Disponibilité',
+      confTitle: 'Engagement de confidentialité',
+      confDesc: "MLT Security Consulting s'engage à respecter la plus stricte confidentialité dès le premier contact. Aucune donnée n'est partagée avec des tiers sans accord explicite écrit.",
+      assessmentTitle: "Besoin d'une estimation stratégique immédiate ?",
+      assessmentSub: "Utilisez notre outil d'évaluation assisté par IA pour obtenir une première vision de votre feuille de route cyber.",
+      assessmentBtn: "Lancer l'Évaluation"
+    },
     footer: {
       desc: 'Partenaire de confiance des directions générales pour la gouvernance du risque cyber et la résilience stratégique des actifs sensibles.',
       rights: 'Confidentialité Absolue.'
@@ -85,11 +131,6 @@ const TRANSLATIONS: Record<Language, any> = {
       generate: 'Générer l\'estimation stratégique',
       reset: 'Recommencer',
       download: 'Conserver l\'analyse'
-    },
-    contact: {
-      offices: 'Nos implantations stratégiques',
-      officeParis: 'Siège Paris',
-      officeMarseille: 'Bureau Méditerranée'
     }
   },
   en: {
@@ -121,6 +162,52 @@ const TRANSLATIONS: Record<Language, any> = {
       ctaBtn: 'Get in Touch',
       trusted: 'Trusted by leaders'
     },
+    about: {
+      tag: 'The Firm',
+      title: 'Independence. Authority. Discretion.',
+      subtitle: "MLT Security Consulting is a strategic advisory firm born from a conviction: cybersecurity is the primary pillar of modern digital trust and a major governance issue.",
+      visionTitle: 'Executive Vision',
+      visionDesc: "We refuse a purely technical approach. For MLT, cybersecurity is a performance lever that must be driven at the Board level.",
+      philosophyTitle: 'Resilience Philosophy',
+      philosophyDesc: "Support based on a deep understanding of business challenges to transform constraints into a foundation for continuity.",
+      indepTitle: 'Total Independence',
+      indepDesc: "No links with vendors. Our objectivity is absolute, guaranteeing recommendations aligned with your strategic interests.",
+      historyTag: 'Our History',
+      historyTitle: 'Expertise forged within critical environments.',
+      historySub: "MLT was born from over ten years of intervention within organizations exposed to state threats and extreme regulatory requirements.",
+      founderQuote: "Cybersecurity is no longer a technical option. It is the invisible armor of your growth strategy.",
+      bridgeTitle: "Bridging the gap between technique and strategy."
+    },
+    insights: {
+      tag: 'Insights & Publications',
+      title: 'Prospective analyses for decision-makers.',
+      subtitle: 'Find our summaries and strategic publications to decipher tomorrow’s cyber challenges.',
+      download: 'Download strategic paper',
+      newsletterTitle: 'Confidential Newsletter',
+      newsletterSub: 'Receive our quarterly macro analysis of cyber risks directly in your inbox.',
+      subscribe: 'Subscribe'
+    },
+    contact: {
+      tag: 'Executive Channel',
+      title: 'Engage in a confidential collaboration.',
+      subtitle: 'Each exchange is handled with the highest level of discretion. For urgent requests or direct decision-level contact.',
+      offices: 'Strategic Locations',
+      officeParis: 'Paris Headquarters',
+      officeMarseille: 'Mediterranean Office',
+      formTitle: 'Strategic Contact Form',
+      formName: 'Full Name',
+      formOrg: 'Organization',
+      formEmail: 'Professional Email',
+      formSubject: 'Exchange Subject',
+      formMessage: 'Message',
+      formSubmit: 'Submit Request',
+      availability: 'Availability',
+      confTitle: 'Confidentiality Commitment',
+      confDesc: "MLT Security Consulting commits to the strictest confidentiality from the first contact. No data is shared with third parties without explicit written agreement.",
+      assessmentTitle: "Need an immediate strategic estimation?",
+      assessmentSub: "Use our AI-assisted assessment tool to get a first view of your cyber roadmap.",
+      assessmentBtn: "Launch Assessment"
+    },
     footer: {
       desc: 'Trusted partner for executive boards in cyber risk governance and strategic resilience of sensitive assets.',
       rights: 'Absolute Confidentiality.'
@@ -139,11 +226,6 @@ const TRANSLATIONS: Record<Language, any> = {
       generate: 'Generate Strategic Estimate',
       reset: 'Start Over',
       download: 'Save Analysis'
-    },
-    contact: {
-      offices: 'Strategic Locations',
-      officeParis: 'Paris Headquarters',
-      officeMarseille: 'Mediterranean Office'
     }
   }
 };
