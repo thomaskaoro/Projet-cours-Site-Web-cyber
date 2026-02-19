@@ -2,12 +2,11 @@
 import React from 'react';
 import SectionHeader from '../components/SectionHeader';
 import { ASSETS } from '../constants';
-import { ShieldCheck, Eye, Compass, BarChart3, Globe, Lock, CheckCircle2, Award } from 'lucide-react';
+import { ShieldCheck, Eye, Compass, CheckCircle2, Award } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
     <div className="bg-night pt-32">
-      {/* Intro & Vision */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader 
@@ -64,7 +63,6 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Notre Histoire & Références */}
       <section className="py-32 bg-carbon/10 border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeader 
@@ -173,7 +171,6 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Genèse & Méthodes */}
       <section className="py-32 bg-night">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-20 items-center">
@@ -215,7 +212,6 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* Profile summary signature */}
       <section className="py-32 bg-night border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col items-center text-center">
