@@ -34,15 +34,6 @@ export const TRUSTED_CLIENTS = [
   "Schneider Electric"
 ];
 
-export const NAVIGATION = [
-  { name: 'Accueil', path: '/' },
-  { name: 'Le Cabinet', path: '/cabinet' },
-  { name: 'Advisory Services', path: '/services' },
-  { name: 'Secteurs', path: '/secteurs' },
-  { name: 'Insights', path: '/insights' },
-  { name: 'Contact', path: '/contact' },
-];
-
 export const SERVICES = [
   {
     title: { fr: "Cyber Risk Governance Advisory", en: "Cyber Risk Governance Advisory" },

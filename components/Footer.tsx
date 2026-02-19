@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { NAVIGATION } from '../constants';
 import { Linkedin, Mail } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import CompanyLogo from './CompanyLogo';
@@ -51,7 +50,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="border-t border-white/5 pt-10 flex flex-col md:row justify-between items-center text-[10px] text-slate-500 uppercase tracking-widest space-y-4 md:space-y-0">
+        {/* Fixed md:row typo to md:flex-row */}
+        <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center text-[10px] text-slate-500 uppercase tracking-widest space-y-4 md:space-y-0">
           <p>© {new Date().getFullYear()} MLT Security Consulting. {t('footer.rights')}</p>
           <p>Strategic Cyber Resilience for the Executive Board.</p>
         </div>

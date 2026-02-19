@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { NAVIGATION } from '../constants';
+// Removed NAVIGATION as it is not exported from constants and not used here.
 import { Menu, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import CompanyLogo from './CompanyLogo';
